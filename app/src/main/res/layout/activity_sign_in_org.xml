@@ -23,36 +23,40 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress2"
+        android:id="@+id/emailOrg"
         android:layout_width="300dp"
         android:layout_height="60dp"
         android:layout_marginTop="100dp"
-        android:background="@drawable/blue_round_border"
+        android:background="@drawable/white_round_border"
         android:ems="10"
         android:hint="Email"
         android:inputType="textEmailAddress"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
+        android:textColor="#F8F8F7"
+        android:textColorHint="#F8F8F7"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <EditText
-        android:id="@+id/editTextTextPassword3"
+        android:id="@+id/passwordOrg"
         android:layout_width="300dp"
         android:layout_height="60dp"
         android:layout_marginTop="50dp"
-        android:background="@drawable/blue_round_border"
+        android:background="@drawable/white_round_border"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
+        android:textColor="#F8F8F7"
+        android:textColorHint="#F8F8F7"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress2" />
+        app:layout_constraintTop_toBottomOf="@+id/emailOrg" />
 
     <com.ncorti.slidetoact.SlideToActView
         android:id="@+id/swipeSI"
@@ -68,7 +72,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword3"
+        app:layout_constraintTop_toBottomOf="@+id/passwordOrg"
         app:outer_color="#F8F8F7"
         app:slider_height="60dp"
         app:slider_locked="false"

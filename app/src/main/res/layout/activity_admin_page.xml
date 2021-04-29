@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1C1D3A"
+    tools:context=".admin_page">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/profilePage"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/searchPage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/profileUpload"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="80dp"
+            android:src="@drawable/photo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/userEmailAdd"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/montserrat"
+            android:gravity="center"
+            android:text="User Name"
+            android:textColor="#F8F8F7"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.532"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/profileUpload" />
+
+        <Button
+            android:id="@+id/logOut"
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:layout_marginBottom="50dp"
+            android:background="@drawable/white_round_border"
+            android:fontFamily="@font/montserrat"
+            android:onClick="logOut"
+            android:text="Log out"
+            android:textColor="#1C1D3A"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/searchPage"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/homePage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/total_white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/total_white"
+                android:fontFamily="@font/montserrat"
+                android:hint="Search events..."
+                android:paddingStart="80dp"
+                android:paddingEnd="80dp"
+                android:textColorHint="#1C1D3A"
+                android:textSize="20dp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/imageLeft"
+            android:layout_width="32dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="20dp"
+            app:layout_constraintBottom_toBottomOf="@+id/textInputLayout"
+            app:layout_constraintStart_toStartOf="@+id/textInputLayout"
+            app:layout_constraintTop_toTopOf="@+id/textInputLayout"
+            app:srcCompat="@drawable/ic_search" />
+
+        <ImageView
+            android:id="@+id/imageRight"
+            android:layout_width="30dp"
+            android:layout_height="28dp"
+            android:layout_marginEnd="20dp"
+            android:onClick="chooseFilters"
+            android:src="@drawable/filters"
+            app:layout_constraintBottom_toBottomOf="@+id/textInputLayout"
+            app:layout_constraintEnd_toEndOf="@+id/textInputLayout"
+            app:layout_constraintTop_toTopOf="@+id/textInputLayout" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view_search"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/homePage"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/navigation_constraint"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view_home"
+            android:layout_width="411dp"
+            android:layout_height="678dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintBottom_toBottomOf="@+id/frameLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageHomePage" />
+
+        <ImageView
+            android:id="@+id/imageHomePage"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/smol_logo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.gauravk.bubblenavigation.BubbleNavigationConstraintView
+        android:id="@+id/navigation_constraint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:clickable="false"
+        android:elevation="4dp"
+        android:padding="12dp"
+        app:bnc_mode="spread"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.gauravk.bubblenavigation.BubbleToggleView
+            android:id="@+id/home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            app:bt_active="true"
+            app:bt_colorActive="#1C1D3A"
+            app:bt_colorInactive="#4A4A68"
+            app:bt_icon="@drawable/ic_home"
+            app:bt_padding="10dp"
+            app:bt_title="Home"
+            app:bt_titlePadding="10dp"
+            app:bt_titleSize="18dp"
+            tools:layout_editor_absoluteX="74dp"
+            tools:layout_editor_absoluteY="12dp" />
+
+        <com.gauravk.bubblenavigation.BubbleToggleView
+            android:id="@+id/search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            app:bt_active="false"
+            app:bt_colorActive="#1C1D3A"
+            app:bt_colorInactive="#4A4A68"
+            app:bt_icon="@drawable/ic_search"
+            app:bt_padding="10dp"
+            app:bt_title="Search"
+            app:bt_titlePadding="10dp"
+            app:bt_titleSize="18dp"
+            tools:layout_editor_absoluteX="124dp"
+            tools:layout_editor_absoluteY="44dp" />
+
+        <com.gauravk.bubblenavigation.BubbleToggleView
+            android:id="@+id/profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            app:bt_active="false"
+            app:bt_colorActive="#1C1D3A"
+            app:bt_colorInactive="#4A4A68"
+            app:bt_icon="@drawable/ic_profile"
+            app:bt_padding="10dp"
+            app:bt_title="Profile"
+            app:bt_titlePadding="10dp"
+            app:bt_titleSize="18dp"
+            tools:layout_editor_absoluteX="186dp"
+            tools:layout_editor_absoluteY="12dp" />
+
+
+    </com.gauravk.bubblenavigation.BubbleNavigationConstraintView>
+
+    <ImageView
+        android:id="@+id/new_organizer"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:clickable="true"
+        android:onClick="newOrganizer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/new_post" />
+</androidx.constraintlayout.widget.ConstraintLayout>

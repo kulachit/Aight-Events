@@ -5,17 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#1C1D3A"
-    tools:context=".home_page">
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view_home"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="80dp"
-        app:layout_constraintBottom_toBottomOf="@+id/frameLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/frameLayout" />
+    tools:context=".home_page_organizer">
 
     <FrameLayout
         android:id="@+id/frameLayout"
@@ -36,7 +26,6 @@
                 android:layout_height="50dp"
                 android:layout_marginTop="20dp"
                 android:src="@drawable/smol_logo"
-                android:visibility="invisible"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -107,5 +96,14 @@
 
 
     </com.gauravk.bubblenavigation.BubbleNavigationConstraintView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view_home"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="80dp"
+        app:layout_constraintBottom_toBottomOf="@+id/frameLayout"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

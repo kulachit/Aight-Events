@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1C1D3A"
+    tools:context=".new_event">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textView23"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="80dp"
+                android:fontFamily="@font/montserrat"
+                android:text="NEW EVENT"
+                android:textColor="#ECECEC"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageView12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:clickable="true"
+                android:onClick="backToHome"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/back_btn_white" />
+
+            <EditText
+                android:id="@+id/eventName"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="50dp"
+                android:background="@drawable/white_round_border"
+                android:ems="10"
+                android:fontFamily="@font/montserrat"
+                android:hint="Event name"
+                android:inputType="textPersonName"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:textColor="#F8F8F7"
+                android:textColorHint="@color/browser_actions_bg_grey"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.494"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageHint" />
+
+            <EditText
+                android:id="@+id/umOkay"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:background="@drawable/big_white_box_border"
+                android:ems="10"
+                android:fontFamily="@font/montserrat"
+                android:gravity="start|top"
+                android:hint="Event description"
+                android:inputType="textMultiLine"
+                android:paddingLeft="20dp"
+                android:paddingTop="20dp"
+                android:paddingRight="20dp"
+                android:paddingBottom="20dp"
+                android:textColor="#F8F8F7"
+                android:textColorHint="@color/browser_actions_bg_grey"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/eventName" />
+
+            <EditText
+                android:id="@+id/link"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="50dp"
+                android:background="@drawable/white_round_border"
+                android:ems="10"
+                android:fontFamily="@font/montserrat"
+                android:hint="Event registeration link"
+                android:inputType="textPersonName"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:textColor="#F8F8F7"
+                android:textColorHint="@color/browser_actions_bg_grey"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.505"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/eventType" />
+
+            <EditText
+                android:id="@+id/collegeFilter"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="50dp"
+                android:background="@drawable/white_round_border"
+                android:ems="10"
+                android:fontFamily="@font/montserrat"
+                android:hint="Organizing college name"
+                android:inputType="textPersonName"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:textColor="#F8F8F7"
+                android:textColorHint="@color/browser_actions_bg_grey"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.505"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/link" />
+
+            <EditText
+                android:id="@+id/date"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="50dp"
+                android:background="@drawable/white_round_border"
+                android:ems="10"
+                android:fontFamily="@font/montserrat"
+                android:hint="Enter date (dd/mm/yyyy)"
+                android:inputType="date"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:textColor="#F8F8F7"
+                android:textColorHint="@color/browser_actions_bg_grey"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.494"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/collegeFilter" />
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="300dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="80dp"
+                android:fontFamily="@font/montserrat"
+                android:onClick="createEvent"
+                android:text="Create event"
+                android:textAllCaps="false"
+                android:textColor="#1C1D3A"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:backgroundTint="#ECECEC"
+                app:cornerRadius="50dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.495"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/date"
+                app:strokeColor="#F8F8F7"
+                app:strokeWidth="3dp" />
+
+            <ImageView
+                android:id="@+id/eventImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="20dp"
+                android:adjustViewBounds="true"
+                android:clickable="true"
+                android:cropToPadding="true"
+                android:onClick="uploadImage"
+                android:scaleType="fitCenter"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView23"
+                app:srcCompat="@drawable/image_upload" />
+
+            <!--            <Spinner-->
+            <!--                android:id="@+id/eventType"-->
+            <!--                android:layout_width="300dp"-->
+            <!--                android:layout_height="50dp"-->
+            <!--                android:layout_marginTop="50dp"-->
+            <!--                android:background="@drawable/white_round_border"-->
+            <!--                android:dropDownWidth="250dp"-->
+            <!--                android:dropDownSelector="@drawable/arrow"-->
+            <!--                android:entries="@array/event_arrays"-->
+            <!--                android:paddingLeft="20dp"-->
+            <!--                android:paddingRight="20dp"-->
+            <!--                android:popupBackground="@drawable/background_dropdown"-->
+            <!--                android:prompt="@string/event_type"-->
+            <!--                app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                app:layout_constraintStart_toStartOf="parent"-->
+            <!--                app:layout_constraintTop_toBottomOf="@+id/college" />-->
+            <TextView
+                android:id="@+id/imageHint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/montserrat"
+                android:text="Upload event poster"
+                android:textColor="#F8F8F7"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/eventImage" />
+
+            <com.skydoves.powerspinner.PowerSpinnerView
+                android:id="@+id/eventType"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="50dp"
+                android:background="@drawable/white_round_border"
+                android:fontFamily="@font/montserrat"
+                android:hint="Type of event"
+                android:paddingLeft="20dp"
+                android:paddingTop="10dp"
+                android:paddingRight="20dp"
+                android:paddingBottom="10dp"
+                android:textColor="#F8F8F7"
+                android:textColorHint="@color/browser_actions_bg_grey"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.505"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/umOkay"
+                app:spinner_arrow_gravity="end"
+                app:spinner_arrow_padding="8dp"
+                app:spinner_divider_color="@color/white"
+                app:spinner_divider_show="true"
+                app:spinner_divider_size="0.4dp"
+                app:spinner_item_array="@array/event_arrays"
+                app:spinner_popup_animation="dropdown"
+                app:spinner_popup_animation_style="@style/DropDown_PowerSpinner"
+                app:spinner_popup_background="#1C1D3A"
+                app:spinner_popup_elevation="14dp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

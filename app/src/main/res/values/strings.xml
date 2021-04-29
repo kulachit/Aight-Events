@@ -9,4 +9,33 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="event_type">Type of event</string>
+
+    <string-array name="event_arrays">
+        <item>Food</item>
+        <item>Tech</item>
+        <item>Social welfare</item>
+        <item>Sports</item>
+        <item>Music</item>
+        <item>Literary</item>
+        <item>Dance</item>
+        <item>Business</item>
+        <item>Art</item>
+        <item>Cultural</item>
+        <item>Other</item>
+    </string-array>
+
+    <string name="college_name">College Name</string>
+
+    <string-array name="college_arrays">
+        <item>PESU</item>
+        <item>RVCE</item>
+        <item>Manipal</item>
+        <item>Other</item>
+    </string-array>
+    <string name="title_activity_event_details">event_details</string>
+    <string name="title_activity_details_event">details_event</string>
 </resources>

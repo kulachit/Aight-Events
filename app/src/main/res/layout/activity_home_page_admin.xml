@@ -5,17 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#1C1D3A"
-    tools:context=".home_page">
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view_home"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="80dp"
-        app:layout_constraintBottom_toBottomOf="@+id/frameLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/frameLayout" />
+    tools:context=".home_page_admin">
 
     <FrameLayout
         android:id="@+id/frameLayout"
@@ -30,13 +20,22 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view_admin"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageHomePage" />
+
             <ImageView
                 android:id="@+id/imageHomePage"
                 android:layout_width="130dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="20dp"
                 android:src="@drawable/smol_logo"
-                android:visibility="invisible"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
