@@ -83,7 +83,7 @@
             app:layout_constraintTop_toBottomOf="@+id/categoryFilter" />
 
         <TextView
-            android:id="@+id/umOkay"
+            android:id="@+id/descriptionEvent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="TextView"

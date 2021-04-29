@@ -206,16 +206,49 @@ public class participant_page extends AppCompatActivity {
         String category = filter.getCategory();
         String college = filter.getCollege();
 
-        Query query = postRef.whereEqualTo("eventType", category);
+        if(!(category == null) && !(college == null)) {
+            Query query = postRef.whereEqualTo("college", college).whereEqualTo("eventType", category);
 
-        FirestoreRecyclerOptions<Event> options = new FirestoreRecyclerOptions.Builder<Event>().setQuery(query, Event.class).build();
+            FirestoreRecyclerOptions<Event> options = new FirestoreRecyclerOptions.Builder<Event>().setQuery(query, Event.class).build();
 
-        adapter = new EventAdapter(options);
-        recyclerViewSearch.setHasFixedSize(true);
-        recyclerViewSearch.setLayoutManager(new LinearLayoutManager(this));
-        recyclerViewSearch.setAdapter(adapter);
+            adapter = new EventAdapter(options);
+            recyclerViewSearch.setHasFixedSize(true);
+            recyclerViewSearch.setLayoutManager(new LinearLayoutManager(this));
+            recyclerViewSearch.setAdapter(adapter);
 
-        adapter.startListening();
+            adapter.startListening();
+            return;
+        }
+
+        if(!(category == null)){
+            Query query = postRef.whereEqualTo("eventType", category);
+
+            FirestoreRecyclerOptions<Event> options = new FirestoreRecyclerOptions.Builder<Event>().setQuery(query, Event.class).build();
+
+            adapter = new EventAdapter(options);
+            recyclerViewSearch.setHasFixedSize(true);
+            recyclerViewSearch.setLayoutManager(new LinearLayoutManager(this));
+            recyclerViewSearch.setAdapter(adapter);
+
+            adapter.startListening();
+            return;
+        }
+
+        if(!(college == null)){
+            Query query = postRef.whereEqualTo("college", college);
+
+            FirestoreRecyclerOptions<Event> options = new FirestoreRecyclerOptions.Builder<Event>().setQuery(query, Event.class).build();
+
+            adapter = new EventAdapter(options);
+            recyclerViewSearch.setHasFixedSize(true);
+            recyclerViewSearch.setLayoutManager(new LinearLayoutManager(this));
+            recyclerViewSearch.setAdapter(adapter);
+
+            adapter.startListening();
+            return;
+        }
+
+        search();
     }
 
     public void logOut(View logout){
@@ -264,7 +297,7 @@ public class participant_page extends AppCompatActivity {
 
             TextView textViewCollege = view.findViewById(R.id.collegeFilter);
             TextView textViewName = name;
-            TextView textViewDescription = view.findViewById(R.id.umOkay);
+            TextView textViewDescription = view.findViewById(R.id.descriptionEvent);
             TextView textViewDate = view.findViewById(R.id.date);
             TextView textViewCategory = view.findViewById(R.id.categoryFilter);
             TextView textViewLink = view.findViewById(R.id.link);

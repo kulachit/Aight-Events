@@ -67,7 +67,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/imageHint" />
 
             <EditText
-                android:id="@+id/umOkay"
+                android:id="@+id/descriptionEvent"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
@@ -231,7 +231,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.505"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/umOkay"
+                app:layout_constraintTop_toBottomOf="@+id/descriptionEvent"
                 app:spinner_arrow_gravity="end"
                 app:spinner_arrow_padding="8dp"
                 app:spinner_divider_color="@color/white"

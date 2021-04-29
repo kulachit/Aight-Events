@@ -45,7 +45,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/imageDetails" />
 
             <ScrollView
-                android:id="@+id/umOkay"
+                android:id="@+id/descriptionEvent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -81,7 +81,7 @@
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/umOkay" />
+                app:layout_constraintTop_toBottomOf="@+id/descriptionEvent" />
 
             <TextView
                 android:id="@+id/date"
@@ -96,7 +96,7 @@
                 android:textColor="#ECF1F4"
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/umOkay" />
+                app:layout_constraintTop_toBottomOf="@+id/descriptionEvent" />
 
             <TextView
                 android:id="@+id/textView17"

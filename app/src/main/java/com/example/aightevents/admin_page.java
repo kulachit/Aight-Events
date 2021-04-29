@@ -76,7 +76,7 @@ public class admin_page extends AppCompatActivity {
         imageRight = findViewById(R.id.imageRight);
         textInputLayout = findViewById(R.id.textInputLayout);
 
-        //for search page
+        //for profile page
         profileUpload = findViewById(R.id.profileUpload);
         userEmailAdd = findViewById(R.id.userEmailAdd);
         logOut = findViewById(R.id.logOut);
@@ -117,6 +117,7 @@ public class admin_page extends AppCompatActivity {
                         profileUpload.setVisibility(View.INVISIBLE);
                         userEmailAdd.setVisibility(View.INVISIBLE);
                         logOut.setVisibility(View.INVISIBLE);
+
 
                         home();
 
@@ -214,16 +215,49 @@ public class admin_page extends AppCompatActivity {
         String category = filter.getCategory();
         String college = filter.getCollege();
 
-        Query query = postRef.whereEqualTo("eventType", category);
+        if(!(category == null) && !(college == null)) {
+            Query query = postRef.whereEqualTo("college", college).whereEqualTo("eventType", category);
 
-        FirestoreRecyclerOptions<Event> options = new FirestoreRecyclerOptions.Builder<Event>().setQuery(query, Event.class).build();
+            FirestoreRecyclerOptions<Event> options = new FirestoreRecyclerOptions.Builder<Event>().setQuery(query, Event.class).build();
 
-        adapter = new EventAdapter(options);
-        recyclerViewSearch.setHasFixedSize(true);
-        recyclerViewSearch.setLayoutManager(new LinearLayoutManager(this));
-        recyclerViewSearch.setAdapter(adapter);
+            adapter = new EventAdapter(options);
+            recyclerViewSearch.setHasFixedSize(true);
+            recyclerViewSearch.setLayoutManager(new LinearLayoutManager(this));
+            recyclerViewSearch.setAdapter(adapter);
 
-        adapter.startListening();
+            adapter.startListening();
+            return;
+        }
+
+        if(!(category == null)){
+            Query query = postRef.whereEqualTo("eventType", category);
+
+            FirestoreRecyclerOptions<Event> options = new FirestoreRecyclerOptions.Builder<Event>().setQuery(query, Event.class).build();
+
+            adapter = new EventAdapter(options);
+            recyclerViewSearch.setHasFixedSize(true);
+            recyclerViewSearch.setLayoutManager(new LinearLayoutManager(this));
+            recyclerViewSearch.setAdapter(adapter);
+
+            adapter.startListening();
+            return;
+        }
+
+        if(!(college == null)){
+            Query query = postRef.whereEqualTo("college", college);
+
+            FirestoreRecyclerOptions<Event> options = new FirestoreRecyclerOptions.Builder<Event>().setQuery(query, Event.class).build();
+
+            adapter = new EventAdapter(options);
+            recyclerViewSearch.setHasFixedSize(true);
+            recyclerViewSearch.setLayoutManager(new LinearLayoutManager(this));
+            recyclerViewSearch.setAdapter(adapter);
+
+            adapter.startListening();
+            return;
+        }
+
+        search();
     }
 
     public void logOut(View logout){
@@ -272,7 +306,7 @@ public class admin_page extends AppCompatActivity {
 
             TextView textViewCollege = view.findViewById(R.id.collegeFilter);
             TextView textViewName = name;
-            TextView textViewDescription = view.findViewById(R.id.umOkay);
+            TextView textViewDescription = view.findViewById(R.id.descriptionEvent);
             TextView textViewDate = view.findViewById(R.id.date);
             TextView textViewCategory = view.findViewById(R.id.categoryFilter);
             TextView textViewLink = view.findViewById(R.id.link);
@@ -319,5 +353,46 @@ public class admin_page extends AppCompatActivity {
     public void newOrganizer(View view){
         startActivity(new Intent(this,new_organizer.class));
         finish();
+    }
+
+    public void editEvent(View view){
+        try {
+            TextView name = view.findViewById(R.id.eventName);
+            String nem = name.getText().toString();
+            Log.println(Log.ERROR, "HELLO", nem);
+            Event newEvent = new Event();
+
+            TextView textViewCollege = view.findViewById(R.id.collegeFilter);
+            TextView textViewName = name;
+            TextView textViewDescription = view.findViewById(R.id.descriptionEvent);
+            TextView textViewDate = view.findViewById(R.id.date);
+            TextView textViewCategory = view.findViewById(R.id.categoryFilter);
+            TextView textViewLink = view.findViewById(R.id.link);
+            TextView textViewImageLink = view.findViewById(R.id.imageLink);
+
+
+            String stringCollege = textViewCollege.getText().toString();
+            String stringName = textViewName.getText().toString();
+            String stringDescription = textViewDescription.getText().toString();
+            String stringDate = textViewDate.getText().toString();
+            String stringCategory = textViewCategory.getText().toString();
+            String stringLink = textViewLink.getText().toString();
+            String stringImageLink = textViewImageLink.getText().toString();
+
+            newEvent.setCollege(stringCollege);
+            newEvent.setEventName(stringName);
+            newEvent.setDescription(stringDescription);
+            newEvent.setDate(stringDate);
+            newEvent.setEventType(stringCategory);
+            newEvent.setLink(stringLink);
+            newEvent.setImageLink(stringImageLink);
+
+            Intent intent = new Intent(this, event_details.class);
+            intent.putExtra("Event", newEvent);
+            startActivity(intent);
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
     }
 }

@@ -117,6 +117,8 @@ public class new_organizer extends AppCompatActivity {
                                     Toast.LENGTH_LONG);
                             toast.setGravity(Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL, 0, 10);
                             toast.show();
+                            startActivity(new Intent(new_organizer.this,admin_page.class));
+                            finish();
                         }
                     })
                     .addOnFailureListener(new OnFailureListener() {
@@ -130,46 +132,6 @@ public class new_organizer extends AppCompatActivity {
                             toast.show();
                         }
                     });
-//                db.collection("organizer")
-//                        .add(organizer)
-//                        .addOnCompleteListener(task ->{
-//                            if(task.isSuccessful()){
-//                                Log.d("success", "DocumentSnapshot added");
-//                                Toast toast = Toast.makeText(getApplicationContext(),
-//                                        "organizer added successfully",
-//                                        Toast.LENGTH_LONG);
-//                                toast.setGravity(Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL, 0, 10);
-//                                toast.show();
-//                            }
-//                                                        else{
-//                                Log.w("error", "Error adding document");
-//                                Toast toast = Toast.makeText(getApplicationContext(),
-//                                        "organizer not added, retry",
-//                                        Toast.LENGTH_LONG);
-//                                toast.setGravity(Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL, 0, 10);
-//                                toast.show();
-//                            }
-//                        });
-
-//                        .addOnCompleteListener(task ->{
-//                            if(task.isSuccessful()){
-//                                Log.d("success", "DocumentSnapshot added");
-//                                Toast toast = Toast.makeText(getApplicationContext(),
-//                                        "organizer added successfully",
-//                                        Toast.LENGTH_LONG);
-//                                toast.setGravity(Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL, 0, 10);
-//                                toast.show();
-//                            }
-//                            else{
-//                                Log.w("error", "Error adding document");
-//                                Toast toast = Toast.makeText(getApplicationContext(),
-//                                        "organizer not added, retry",
-//                                        Toast.LENGTH_LONG);
-//                                toast.setGravity(Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL, 0, 10);
-//                                toast.show();
-//                            }
-//                        });
-
             }
     }
 

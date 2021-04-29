@@ -25,6 +25,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
@@ -41,6 +42,7 @@ public class organizer_page extends AppCompatActivity {
     TextInputLayout textInputLayout;
 
     //for search page
+    RecyclerView recyclerViewProfile;
     ImageView profileUpload;
     TextView userEmailAdd;
     Button logOut;
@@ -75,6 +77,7 @@ public class organizer_page extends AppCompatActivity {
         textInputLayout = findViewById(R.id.textInputLayout);
 
         //for search page
+        recyclerViewProfile = findViewById(R.id.recycler_view_profile);
         profileUpload = findViewById(R.id.profileUpload);
         userEmailAdd = findViewById(R.id.userEmailAdd);
         logOut = findViewById(R.id.logOut);
@@ -115,6 +118,7 @@ public class organizer_page extends AppCompatActivity {
                         profileUpload.setVisibility(View.INVISIBLE);
                         userEmailAdd.setVisibility(View.INVISIBLE);
                         logOut.setVisibility(View.INVISIBLE);
+                        recyclerViewProfile.setVisibility(View.INVISIBLE);
 
                         home();
 
@@ -136,6 +140,7 @@ public class organizer_page extends AppCompatActivity {
                         profileUpload.setVisibility(View.INVISIBLE);
                         userEmailAdd.setVisibility(View.INVISIBLE);
                         logOut.setVisibility(View.INVISIBLE);
+                        recyclerViewProfile.setVisibility(View.INVISIBLE);
 
                         search();
 
@@ -146,6 +151,7 @@ public class organizer_page extends AppCompatActivity {
                         profileUpload.setVisibility(View.VISIBLE);
                         userEmailAdd.setVisibility(View.VISIBLE);
                         logOut.setVisibility(View.VISIBLE);
+                        recyclerViewProfile.setVisibility(View.VISIBLE);
 
                         //invisible
                         recyclerViewSearch.setVisibility(View.INVISIBLE);
@@ -156,6 +162,8 @@ public class organizer_page extends AppCompatActivity {
 
                         recyclerViewHome.setVisibility(View.INVISIBLE);
                         imageHomePage.setVisibility(View.INVISIBLE);
+
+                        profile();
 
                         break;
 
@@ -177,6 +185,9 @@ public class organizer_page extends AppCompatActivity {
         Filter filter = Filter.getInstance();
         if(!(filter.getFlag() == null)){
             searchByFilter(filter);
+        }
+        if(mainView.getCurrentActiveItemPosition() == 2){
+            profile();
         }
     }
 
@@ -204,6 +215,21 @@ public class organizer_page extends AppCompatActivity {
         recyclerViewSearch.setHasFixedSize(true);
         recyclerViewSearch.setLayoutManager(new LinearLayoutManager(this));
         recyclerViewSearch.setAdapter(adapter);
+
+        adapter.startListening();
+    }
+
+    public void profile(){
+
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        Query query = postRef.whereEqualTo("userID", currentUser.getUid());
+
+        FirestoreRecyclerOptions<Event> options = new FirestoreRecyclerOptions.Builder<Event>().setQuery(query, Event.class).build();
+
+        adapter = new EventAdapter(options);
+        recyclerViewProfile.setHasFixedSize(true);
+        recyclerViewProfile.setLayoutManager(new LinearLayoutManager(this));
+        recyclerViewProfile.setAdapter(adapter);
 
         adapter.startListening();
     }
@@ -304,7 +330,7 @@ public class organizer_page extends AppCompatActivity {
 
             TextView textViewCollege = view.findViewById(R.id.collegeFilter);
             TextView textViewName = name;
-            TextView textViewDescription = view.findViewById(R.id.umOkay);
+            TextView textViewDescription = view.findViewById(R.id.descriptionEvent);
             TextView textViewDate = view.findViewById(R.id.date);
             TextView textViewCategory = view.findViewById(R.id.categoryFilter);
             TextView textViewLink = view.findViewById(R.id.link);

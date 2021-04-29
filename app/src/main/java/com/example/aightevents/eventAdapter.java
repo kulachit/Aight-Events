@@ -81,7 +81,7 @@ public class EventAdapter extends FirestoreRecyclerAdapter<Event, EventAdapter.E
             textViewDate = itemView.findViewById(R.id.date);
             textViewCategory = itemView.findViewById(R.id.categoryFilter);
             textViewCollege = itemView.findViewById(R.id.collegeFilter);
-            textViewDescription = itemView.findViewById(R.id.umOkay);
+            textViewDescription = itemView.findViewById(R.id.descriptionEvent);
             textViewLink = itemView.findViewById(R.id.link);
             imageViewImage = itemView.findViewById(R.id.eventImage);
             textViewImageLink = itemView.findViewById(R.id.imageLink);

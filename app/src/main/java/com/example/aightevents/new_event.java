@@ -103,7 +103,7 @@ public class new_event extends AppCompatActivity {
 
         college = findViewById(R.id.collegeFilter);
         eventName = findViewById(R.id.eventName);
-        description = findViewById(R.id.umOkay);
+        description = findViewById(R.id.descriptionEvent);
         date = findViewById(R.id.date);
         link = findViewById(R.id.link);
         String eventNameText = eventName.getText().toString();
