@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,6 +26,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
@@ -38,7 +40,7 @@ public class participant_page extends AppCompatActivity {
     RecyclerView recyclerViewSearch;
     ImageView imageLeft;
     ImageView imageRight;
-    TextInputLayout textInputLayout;
+    EditText textInputLayout;
 
     //for search page
     ImageView profileUpload;
@@ -61,6 +63,9 @@ public class participant_page extends AppCompatActivity {
         setContentView(R.layout.activity_participant_page);
         overridePendingTransition(R.anim.fadein, R.anim.fadeout);
         getSupportActionBar().hide();
+
+        mAuth = FirebaseAuth.getInstance();
+        FirebaseUser currentUser = mAuth.getCurrentUser();
 
         //for home page
          recyclerViewHome = findViewById(R.id.recycler_view_home);
@@ -141,6 +146,7 @@ public class participant_page extends AppCompatActivity {
                         profileUpload.setVisibility(View.VISIBLE);
                         userEmailAdd.setVisibility(View.VISIBLE);
                         logOut.setVisibility(View.VISIBLE);
+                        userEmailAdd.setText(currentUser.getEmail());
 
                         //invisible
                         recyclerViewSearch.setVisibility(View.INVISIBLE);
@@ -172,7 +178,14 @@ public class participant_page extends AppCompatActivity {
         if(!(filter.getFlag() == null)){
             searchByFilter(filter);
         }
+        else if(mainView.getCurrentActiveItemPosition() == 0){
+            home();
+        }
+        else if(mainView.getCurrentActiveItemPosition() == 1){
+            search();
+        }
     }
+
 
     public void home(){
 

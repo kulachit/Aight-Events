@@ -33,8 +33,9 @@
         android:inputType="textEmailAddress"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
-        android:textColor="#F8F8F7"
-        android:textColorHint="#F8F8F7"
+        android:textColor="#ECF1F4"
+        android:textColorHint="#F3F1EB"
+        android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
@@ -51,8 +52,9 @@
         android:inputType="textPassword"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
-        android:textColor="#F8F8F7"
-        android:textColorHint="#F8F8F7"
+        android:textColor="#ECF1F4"
+        android:textColorHint="#F3F1EB"
+        android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
@@ -76,9 +78,9 @@
         app:outer_color="#F8F8F7"
         app:slider_height="60dp"
         app:slider_locked="false"
-        app:text="Sign In"
-        app:text_size="20dp"
-        app:text_style="bold"/>
+        app:text="Swipe to sign in"
+        app:text_size="15sp"
+        app:text_style="bold" />
 
     <ImageView
         android:id="@+id/imageView5"

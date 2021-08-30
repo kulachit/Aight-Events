@@ -55,25 +55,26 @@
         android:layout_width="300dp"
         android:layout_height="60dp"
         android:layout_marginTop="60dp"
+        android:onClick="studentLogin"
         android:text="I'm a student"
         android:textColor="#25274D"
-        android:textSize="24sp"
+        android:textSize="19sp"
         app:backgroundTint="#FFFFFF"
         app:cornerRadius="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        android:onClick="studentLogin"/>
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
         android:id="@+id/organizerBtn"
         android:layout_width="300dp"
         android:layout_height="60dp"
         android:layout_marginTop="164dp"
+        android:onClick="orgLogin"
         android:text="I'm an organizer"
         android:textColor="#F8F8F7"
-        android:textSize="24sp"
+        android:textSize="19sp"
         app:backgroundTint="#25274D"
         app:cornerRadius="50dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -81,7 +82,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
         app:strokeColor="#F8F8F7"
-        app:strokeWidth="3dp"
-        android:onClick="orgLogin"/>
+        app:strokeWidth="3dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

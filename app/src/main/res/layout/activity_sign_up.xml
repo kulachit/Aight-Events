@@ -37,7 +37,8 @@
         app:slider_icon="@drawable/google"
         app:slider_locked="false"
         app:text="Sign In With Google"
-        app:text_size="20dp"
+        app:text_color="#ECF1F4"
+        app:text_size="15sp"
         app:text_style="bold" />
 
     <ImageView
@@ -79,6 +80,9 @@
         android:inputType="textEmailAddress"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
+        android:textColor="#1C1D3A"
+        android:textColorHint="#8C8CA1"
+        android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
@@ -94,6 +98,9 @@
         android:inputType="textPassword"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
+        android:textColor="#1C1D3A"
+        android:textColorHint="#8C8CA1"
+        android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/emailOrg" />
@@ -109,6 +116,9 @@
         android:inputType="textPassword"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
+        android:textColor="#1C1D3A"
+        android:textColorHint="#8C8CA1"
+        android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/passwordSU" />
@@ -118,10 +128,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="15dp"
-        android:layout_marginRight="15dp"
         android:layout_marginBottom="15dp"
         android:fontFamily="@font/montserrat"
         android:text="Already have an account?"
+        android:textColor="#1C1D3A"
+        android:textColorHint="#1C1D3A"
+        android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/textView4" />
 
@@ -130,15 +142,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="15dp"
-        android:layout_marginRight="15dp"
         android:layout_marginBottom="15dp"
+        android:clickable="true"
         android:fontFamily="@font/montserrat"
+        android:onClick="signUp"
         android:text="Sign in"
         android:textColor="#5DA2D5"
+        android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:clickable="true"
-        android:onClick="signUp"/>
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <com.ncorti.slidetoact.SlideToActView
         android:id="@+id/swipeSU"
@@ -157,7 +169,8 @@
         app:outer_color="#1C1D3A"
         app:slider_height="60dp"
         app:slider_locked="false"
-        app:text="Sign Up"
-        app:text_size="20dp"
+        app:text="Swipe to sign up"
+        app:text_color="#ECF1F4"
+        app:text_size="15sp"
         app:text_style="bold" />
 </androidx.constraintlayout.widget.ConstraintLayout>

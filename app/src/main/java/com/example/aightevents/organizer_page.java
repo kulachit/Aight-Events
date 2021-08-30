@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -39,13 +40,13 @@ public class organizer_page extends AppCompatActivity {
     RecyclerView recyclerViewSearch;
     ImageView imageLeft;
     ImageView imageRight;
-    TextInputLayout textInputLayout;
+    EditText textInputLayout;
 
     //for search page
     RecyclerView recyclerViewProfile;
     ImageView profileUpload;
     TextView userEmailAdd;
-    Button logOut;
+    ImageView logOut;
 
     private EventAdapter adapter;
 
@@ -60,11 +61,15 @@ public class organizer_page extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_organizer_page);
 
         overridePendingTransition(R.anim.fadein, R.anim.fadeout);
         getSupportActionBar().hide();
+
+        mAuth = FirebaseAuth.getInstance();
+        FirebaseUser currentUser = mAuth.getCurrentUser();
 
         //for home page
         recyclerViewHome = findViewById(R.id.recycler_view_home);
@@ -150,6 +155,7 @@ public class organizer_page extends AppCompatActivity {
                         //visible
                         profileUpload.setVisibility(View.VISIBLE);
                         userEmailAdd.setVisibility(View.VISIBLE);
+                        userEmailAdd.setText(currentUser.getEmail());
                         logOut.setVisibility(View.VISIBLE);
                         recyclerViewProfile.setVisibility(View.VISIBLE);
 
@@ -186,7 +192,13 @@ public class organizer_page extends AppCompatActivity {
         if(!(filter.getFlag() == null)){
             searchByFilter(filter);
         }
-        if(mainView.getCurrentActiveItemPosition() == 2){
+        else if(mainView.getCurrentActiveItemPosition() == 0){
+            home();
+        }
+        else if(mainView.getCurrentActiveItemPosition() == 1){
+            search();
+        }
+        else if(mainView.getCurrentActiveItemPosition() == 2){
             profile();
         }
     }

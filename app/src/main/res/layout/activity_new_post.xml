@@ -7,18 +7,39 @@
     android:background="#1C1D3A"
     tools:context=".new_event">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginBottom="4dp"
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="20dp"
+        android:fontFamily="@font/montserrat"
+        android:onClick="createEvent"
+        android:text="Create event"
+        android:textAllCaps="false"
+        android:textColor="#1C1D3A"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:backgroundTint="#ECECEC"
+        app:cornerRadius="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:strokeColor="#F8F8F7"
+        app:strokeWidth="3dp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/button3"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
             <TextView
                 android:id="@+id/textView23"
@@ -28,24 +49,11 @@
                 android:fontFamily="@font/montserrat"
                 android:text="NEW EVENT"
                 android:textColor="#ECECEC"
-                android:textSize="28sp"
+                android:textSize="19sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageView
-                android:id="@+id/imageView12"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="15dp"
-                android:clickable="true"
-                android:onClick="backToHome"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/back_btn_white" />
 
             <EditText
                 android:id="@+id/eventName"
@@ -59,8 +67,9 @@
                 android:inputType="textPersonName"
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
-                android:textColor="#F8F8F7"
-                android:textColorHint="@color/browser_actions_bg_grey"
+                android:textColor="#ECF1F4"
+                android:textColorHint="#F3F1EB"
+                android:textSize="15sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.494"
                 app:layout_constraintStart_toStartOf="parent"
@@ -81,8 +90,9 @@
                 android:paddingTop="20dp"
                 android:paddingRight="20dp"
                 android:paddingBottom="20dp"
-                android:textColor="#F8F8F7"
-                android:textColorHint="@color/browser_actions_bg_grey"
+                android:textColor="#ECF1F4"
+                android:textColorHint="#F3F1EB"
+                android:textSize="15sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/eventName" />
@@ -99,8 +109,9 @@
                 android:inputType="textPersonName"
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
-                android:textColor="#F8F8F7"
-                android:textColorHint="@color/browser_actions_bg_grey"
+                android:textColor="#ECF1F4"
+                android:textColorHint="#F3F1EB"
+                android:textSize="15sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.505"
                 app:layout_constraintStart_toStartOf="parent"
@@ -118,8 +129,9 @@
                 android:inputType="textPersonName"
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
-                android:textColor="#F8F8F7"
-                android:textColorHint="@color/browser_actions_bg_grey"
+                android:textColor="#ECF1F4"
+                android:textColorHint="#F3F1EB"
+                android:textSize="15sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.505"
                 app:layout_constraintStart_toStartOf="parent"
@@ -137,35 +149,13 @@
                 android:inputType="date"
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
-                android:textColor="#F8F8F7"
-                android:textColorHint="@color/browser_actions_bg_grey"
+                android:textColor="#ECF1F4"
+                android:textColorHint="#F3F1EB"
+                android:textSize="15sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.494"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/collegeFilter" />
-
-            <Button
-                android:id="@+id/button3"
-                android:layout_width="300dp"
-                android:layout_height="60dp"
-                android:layout_marginTop="50dp"
-                android:layout_marginBottom="80dp"
-                android:fontFamily="@font/montserrat"
-                android:onClick="createEvent"
-                android:text="Create event"
-                android:textAllCaps="false"
-                android:textColor="#1C1D3A"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                app:backgroundTint="#ECECEC"
-                app:cornerRadius="50dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.495"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/date"
-                app:strokeColor="#F8F8F7"
-                app:strokeWidth="3dp" />
 
             <ImageView
                 android:id="@+id/eventImage"
@@ -220,14 +210,15 @@
                 android:layout_marginTop="50dp"
                 android:background="@drawable/white_round_border"
                 android:fontFamily="@font/montserrat"
+                android:gravity="center_vertical"
                 android:hint="Type of event"
                 android:paddingLeft="20dp"
                 android:paddingTop="10dp"
                 android:paddingRight="20dp"
                 android:paddingBottom="10dp"
-                android:textColor="#F8F8F7"
-                android:textColorHint="@color/browser_actions_bg_grey"
-                android:textSize="18sp"
+                android:textColor="#ECF1F4"
+                android:textColorHint="#F3F1EB"
+                android:textSize="15sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.505"
                 app:layout_constraintStart_toStartOf="parent"
@@ -242,6 +233,20 @@
                 app:spinner_popup_animation_style="@style/DropDown_PowerSpinner"
                 app:spinner_popup_background="#1C1D3A"
                 app:spinner_popup_elevation="14dp" />
+
+            <ImageView
+                android:id="@+id/imageView8"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:clickable="true"
+                android:onClick="backToHome"
+                android:rotation="45"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/new_post" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 

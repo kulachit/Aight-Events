@@ -66,4 +66,8 @@ public class select_filter extends AppCompatActivity {
         finish();
     }
 
+    public void goBack(View view){
+        finish();
+    }
+
 }

@@ -7,18 +7,6 @@
     android:background="#1C1D3A"
     tools:context=".organizer_page">
 
-    <ImageView
-        android:id="@+id/new_event"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:clickable="true"
-        android:onClick="newEvent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/new_post" />
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/profilePage"
         android:layout_width="match_parent"
@@ -28,6 +16,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/logOut"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:onClick="logOut"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/logoutbtn" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_view_profile"
@@ -41,8 +40,8 @@
 
         <ImageView
             android:id="@+id/profileUpload"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:layout_marginTop="80dp"
             android:src="@drawable/photo"
             app:layout_constraintEnd_toEndOf="parent"
@@ -54,35 +53,18 @@
             android:id="@+id/userEmailAdd"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:fontFamily="@font/montserrat"
             android:gravity="center"
             android:text="User Name"
             android:textColor="#F8F8F7"
-            android:textSize="24sp"
+            android:textSize="19sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.532"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/profileUpload" />
 
-        <Button
-            android:id="@+id/logOut"
-            android:layout_width="100dp"
-            android:layout_height="60dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="20dp"
-            android:background="@drawable/white_round_border"
-            android:fontFamily="@font/montserrat"
-            android:onClick="logOut"
-            android:text="Log out"
-            android:textColor="#1C1D3A"
-            android:textSize="12sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.948"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -95,28 +77,24 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <com.google.android.material.textfield.TextInputLayout
+        <EditText
             android:id="@+id/textInputLayout"
             android:layout_width="300dp"
             android:layout_height="50dp"
             android:layout_marginTop="20dp"
             android:background="@drawable/total_white"
+            android:ems="10"
+            android:fontFamily="@font/montserrat"
+            android:hint="Search event ..."
+            android:inputType="textPersonName"
+            android:paddingLeft="80dp"
+            android:paddingRight="80dp"
+            android:textColor="#1C1D3A"
+            android:textColorHint="#8C8CA1"
+            android:textSize="15sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/total_white"
-                android:fontFamily="@font/montserrat"
-                android:hint="Search events..."
-                android:paddingStart="80dp"
-                android:paddingEnd="80dp"
-                android:textColorHint="#1C1D3A"
-                android:textSize="20dp" />
-
-        </com.google.android.material.textfield.TextInputLayout>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/imageLeft"
@@ -143,7 +121,6 @@
             android:id="@+id/recycler_view_search"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginTop="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -161,6 +138,18 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/new_event"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:clickable="true"
+            android:onClick="newEvent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/new_post" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_view_home"

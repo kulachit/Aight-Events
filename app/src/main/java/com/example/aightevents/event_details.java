@@ -57,7 +57,7 @@ public class event_details extends AppCompatActivity {
     }
 
     public void backToHome(View backHome) {
-        finish();
+        event_details.this.finish();
     }
 
     public void openLink(View openlink){

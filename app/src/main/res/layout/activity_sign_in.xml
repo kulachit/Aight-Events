@@ -46,6 +46,9 @@
         android:inputType="textEmailAddress"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
+        android:textColor="#1C1D3A"
+        android:textColorHint="#8C8CA1"
+        android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
@@ -62,6 +65,9 @@
         android:inputType="textPassword"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
+        android:textColor="#1C1D3A"
+        android:textColorHint="#8C8CA1"
+        android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
@@ -77,7 +83,7 @@
         app:area_margin="8dp"
         app:border_radius="50dp"
         app:icon_margin="8dp"
-        app:inner_color="#F8F8F7"
+        app:inner_color="#ECF1F4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
@@ -85,8 +91,8 @@
         app:outer_color="#1C1D3A"
         app:slider_height="60dp"
         app:slider_locked="false"
-        app:text="Sign In"
-        app:text_size="20dp"
+        app:text="Swipe to sign in"
+        app:text_size="15sp"
         app:text_style="bold" />
 
     <com.google.android.gms.common.SignInButton
@@ -109,7 +115,7 @@
         app:area_margin="8dp"
         app:border_radius="50dp"
         app:icon_margin="8dp"
-        app:inner_color="#F8F8F7"
+        app:inner_color="#ECF1F4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
@@ -119,7 +125,7 @@
         app:slider_icon="@drawable/google"
         app:slider_locked="false"
         app:text="Sign In With Google"
-        app:text_size="20dp"
+        app:text_size="15sp"
         app:text_style="bold" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
